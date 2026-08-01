@@ -4,9 +4,15 @@
   "description": "",
   "license": "ISC",
   "author": "Aditi Shikotara",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6"
   }
 }

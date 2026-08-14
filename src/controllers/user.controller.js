@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
 import { User } from "../models/user.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
@@ -35,12 +36,11 @@ const registerUser = asyncHandler(async (req, res) => {
   // return res
 
   const { fullName, email, username, password } = req.body;
-  // console.log("email: ", email);
 
   if (
     [fullName, email, username, password].some((field) => field?.trim() === "")
   ) {
-    throw ApiError(400, "All fields are required");
+    throw new ApiError(400, "All fields are required");
   }
 
   const existedUser = await User.findOne({

@@ -1,2 +1,0 @@
-# Clip-nest application
-
